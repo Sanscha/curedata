@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+}
+
+:root {
+  --sky-brand-50: #f0f9ff;
+  --sky-brand-100: #e0f2fe;
+  --sky-brand-200: #bae6fd;
+  --sky-brand-300: #7dd3fc;
+  --sky-brand-400: #38bdf8;
+  --sky-brand-500: #0ea5e9;
+  --sky-brand-600: #0284c7;
+  --sky-brand-700: #0369a1;
+  --sky-brand-800: #075985;
+  --sky-brand-900: #0c4a6e;
+  --sky-brand-950: #082f49;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Glassmorphism utilities */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(186, 230, 253, 0.6);
+}
+
+.glass-nav-sky {
+  background: rgba(240, 249, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.15);
+}
+
+/* 3D perspective flip card styles */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Glowing animation */
+@keyframes skyGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.2), inset 0 0 15px rgba(56, 189, 248, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.45), inset 0 0 25px rgba(56, 189, 248, 0.3);
+  }
+}
+
+.sky-glow {
+  animation: skyGlow 4s infinite ease-in-out;
+}
+
+/* DNA Strand animation */
+@keyframes rotateDNA {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-dna {
+  animation: rotateDNA 14s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Floating animation */
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f9ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #7dd3fc;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
